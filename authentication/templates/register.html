@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{%block title %}
+Register Page
+{% endblock %}
+
+
+{% block content %}
+<body class="text-center" style="color:rgb(37, 108, 179) ;">
+    <br>
+    <h3> 
+        Please create an account
+    </h3>
+    <br>
+    <form class="form-register">
+        
+      <div class="container">
+        {{ form.username.label() }}
+        {{ form.username(class= 'form-control', placeholder = "Enter Username", type = 'username') }}
+        <br>
+        {{form.email.label()}}
+        {{ form.email(class = "form-control", placeholder = "example@gmail.com", type ='email') }}
+        <br>
+        {{ form.password1.label()}}
+        {{ form.password1(class= "form-control", placeholder = "Enter Password", type = 'password')}}
+        <br>
+        {{ form.password2.label()}}
+        {{ form.password2(class= ' form-control', placeholder = "Confirm Password", type = 'password')}}
+        <br>
+        <h6>
+            Already have an account?
+        </h6>
+          <a class="btn btn-sm btn-secondary", href="{{ url_for('login')}}">LOG IN </a>
+        <br>
+        <br>
+        {{ form.submit(class = "btn btn-primary", placeholder="Create Account")}}
+
+      </div>
+
+    </form>
+</body>
+
+
+{% endblock %}
